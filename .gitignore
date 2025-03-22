@@ -1,0 +1,59 @@
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environment (if you use one)
+.env/
+.venv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoint files
+.ipynb_checkpoints/
+
+# Data files (especially large datasets)
+*.csv
+*.json
+*.parquet
+*.db
+*.sqlite
+data/
+
+# Generated files (from your script)
+*.png
+*.pkl
+*.pkl.gz
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+logs/
+
+# Dependency directories
+dist/
+build/
+*.egg-info/
+
+# Ignore sensitive information
+*.key
+*.pem
+secrets/
+credentials/
