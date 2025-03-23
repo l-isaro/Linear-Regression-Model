@@ -39,7 +39,6 @@ data/
 # Generated files (from your script)
 *.png
 *.pkl
-*.pkl.gz
 
 # Logs and temporary files
 *.log
