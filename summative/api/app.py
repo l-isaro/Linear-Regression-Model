@@ -51,7 +51,6 @@ def predict():
 
         return {
             'prediction': float(prediction),
-            'model_name': model_data['model_name']
         }, 200
     except Exception as e:
         return {'error': str(e)}, 500

@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const CropYieldApp());
+  runApp(const AgritechApp());
 }
 
-class CropYieldApp extends StatelessWidget {
-  const CropYieldApp({super.key});
+class AgritechApp extends StatelessWidget {
+  const AgritechApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Crop Yield Predictor',
+      title: 'Agritech',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Colors.black87),
+        ),
       ),
       home: const HomeScreen(),
     );
