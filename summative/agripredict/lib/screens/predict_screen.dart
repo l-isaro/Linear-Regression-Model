@@ -55,6 +55,13 @@ class _PredictScreenState extends State<PredictScreen> {
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                 ),
+                const Text(
+                  'Predicted Yield',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
+                ),
                 Text(
                   result,
                   style: const TextStyle(
@@ -120,7 +127,7 @@ class _PredictScreenState extends State<PredictScreen> {
       _isLoading = true;
     });
 
-    const String apiUrl = 'https://crop-yield-api.onrender.com/predict/';
+    const String apiUrl = 'https://crop-yield-api.onrender.com/predict';
 
     final Map<String, dynamic> data = {
       'Region': _regionController.text,
@@ -167,11 +174,6 @@ class _PredictScreenState extends State<PredictScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Agritech'),
-        backgroundColor: Colors.green[700],
-        elevation: 0,
-      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -182,6 +184,17 @@ class _PredictScreenState extends State<PredictScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.green,
+                      ),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
                   const Center(
                     child: Text(
                       'Agritech',
