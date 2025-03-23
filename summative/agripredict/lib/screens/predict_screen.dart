@@ -43,6 +43,7 @@ class _PredictScreenState extends State<PredictScreen> {
             padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Align(
                   alignment: Alignment.topRight,
@@ -54,14 +55,6 @@ class _PredictScreenState extends State<PredictScreen> {
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                 ),
-                const Text(
-                  'Predicted Yield',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black87,
-                  ),
-                ),
-                const SizedBox(height: 16),
                 Text(
                   result,
                   style: const TextStyle(
@@ -80,6 +73,7 @@ class _PredictScreenState extends State<PredictScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                      elevation: 2,
                     ),
                     onPressed: () => Navigator.of(context).pop(),
                     child: const Text(
@@ -126,7 +120,7 @@ class _PredictScreenState extends State<PredictScreen> {
       _isLoading = true;
     });
 
-    const String apiUrl = 'https://crop-yield-api.onrender.com/predict';
+    const String apiUrl = 'https://crop-yield-api.onrender.com/predict/';
 
     final Map<String, dynamic> data = {
       'Region': _regionController.text,
@@ -152,7 +146,7 @@ class _PredictScreenState extends State<PredictScreen> {
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
         _showResultsDialog(
-          'Predicted Yield: ${result['prediction'].toStringAsFixed(2)} tons/ha\nModel: ${result['model_name']}',
+          '${result['prediction'].toStringAsFixed(2)} tons/ha',
         );
       } else {
         final responseData = jsonDecode(response.body);
