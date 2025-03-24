@@ -19,6 +19,7 @@ class AgritechApp extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.black87),
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
     );
   }
